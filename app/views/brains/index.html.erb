@@ -1,6 +1,6 @@
 <h1 style="color:red">Listing brains</h1>
 
-
+<div class="row">
     <% @brains.each do |brain| %>
       <div class="item">
         <td><%= brain.id %></td>
@@ -11,8 +11,9 @@
         <td><%= link_to 'Destroy', brain_path(brain), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </div>
     <% end %>
-
+</div>
 
 <br>
-
+<div class="row">
 <%= link_to 'New Brain', new_brain_path, class:'new btn btn-primary btn-lg' %>
+</div>

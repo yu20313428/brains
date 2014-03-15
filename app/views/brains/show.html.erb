@@ -29,5 +29,14 @@
 </a>
 </div>
 </div>
+
+<P>
+	<strong>Comment:</strong>
+	<% @brain.comments.each do |comment| %>
+	<%= comment.body %>
+<% end%>
+<%= link_to 'leave comment', new_comment_path %>
+</p>
+
 <%= link_to 'Edit', edit_brain_path(@brain) %> |
 <%= link_to 'Back', brains_path %>
