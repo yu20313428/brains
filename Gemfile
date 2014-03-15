@@ -53,3 +53,5 @@ end
 gem 'carrierwave'
 
 gem 'nested_form'
+
+gem 'bootstrap-sass'

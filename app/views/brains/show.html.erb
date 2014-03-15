@@ -20,8 +20,14 @@
   <%= @brain.description %>
 </p>
 
+<div class="row">
+	<div class="col-xs-6 col-md-3">
+		<a href="#" class="thumbnail">
 <% @brain.photos.each do |photo| %>
-<%= image_tag(photo.image)%>
+	<%= image_tag(photo.image)%>
 <% end %>
+</a>
+</div>
+</div>
 <%= link_to 'Edit', edit_brain_path(@brain) %> |
 <%= link_to 'Back', brains_path %>
