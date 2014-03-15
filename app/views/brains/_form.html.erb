@@ -1,4 +1,4 @@
-<%= form_for(@brain) do |f| %>
+<%= nested_form_for(@brain, multipart:true) do |f| %>
   <% if @brain.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@brain.errors.count, "error") %> prohibited this brain from being saved:</h2>
@@ -27,6 +27,15 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+
+<%= f.fields_for :photos do |photo_form| %>
+<%= image_tag(photo_form.object.image, width:50) %>
+  <%= photo_form.file_field :image %>
+  <%= photo_form.link_to_remove "Remove this task" %>
+<% end %>
+<p><%= f.link_to_add "Add a task", :photos %></p>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,3 +1,15 @@
 // Place all the styles related to the brains controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div.item{
+	width: 200px;
+	float: left;
+	border: 1px solid;
+	margin: 5px
+}
+div.item img{
+	width: 180px
+}
+div.item div.name{
+	float: right
+}

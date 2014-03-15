@@ -69,6 +69,6 @@ class BrainsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def brain_params
-      params.require(:brain).permit(:name, :email, :date, :description)
+      params.require(:brain).permit(:name, :email, :date, :description, :photos_attributes => [:id, :image, :brain_id])
     end
 end

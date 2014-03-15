@@ -1,4 +1,5 @@
 Brains::Application.routes.draw do
+  root 'brains#index'
   resources :photos
 
   resources :brains

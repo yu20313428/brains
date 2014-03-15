@@ -1,33 +1,18 @@
 <h1 style="color:red">Listing brains</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>姓名</th>
-      <th>Email</th>
-      <th>日期</th>
-      <th>想說的話  </th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
     <% @brains.each do |brain| %>
-      <tr>
-        <td><%= brain.name %></td>
-        <td><%= brain.email %></td>
-        <td><%= brain.date %></td>
-        <td><%= brain.description %></td>
+      <div class="item">
+        <td><%= brain.id %></td>
+        <div class="name"><%= brain.name %></div>
+        <td><%= image_tag(brain.photos.first.image) %></td>
         <td><%= link_to 'Show', brain_path(brain) %></td>
         <td><%= link_to 'Edit', edit_brain_path(brain) %></td>
         <td><%= link_to 'Destroy', brain_path(brain), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      </div>
     <% end %>
-  </tbody>
-</table>
+
 
 <br>
 
-<%= link_to 'New Brain', new_brain_path %>
+<%= link_to 'New Brain', new_brain_path, class:'new' %>
